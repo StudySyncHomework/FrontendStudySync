@@ -1,54 +1,82 @@
-<form (ngSubmit)="createNewHomework()">
-  <label for="title">Title:</label>
-  <input
-    type="text"
-    id="title"
-    name="title"
-    [(ngModel)]="homework.title"
-    required
-  />
-  <br />
+<h2 class="text-4xl font-merriweather text-center text-gray-900 mb-6">
+  Enter your homework details:
+</h2>
 
-  <label for="status">Status:</label>
-  <input
-    type="text"
-    id="status"
-    name="status"
-    [(ngModel)]="homework.status"
-    required
-  />
-  <br />
-
-  <label for="priority">Priority:</label>
-  <input
-    type="text"
-    id="priority"
-    name="priority"
-    [(ngModel)]="homework.priority"
-    required
-  />
-  <br />
-
-  <label for="due-date">Due Date:</label>
-  <input
-    type="text"
-    id="dueDate"
-    name="dueDate"
-    [(ngModel)]="homework.dueDate"
-    required
-  />
-  <br />
-
-  <label for="details">Details:</label>
-  <textarea
-    id="details"
-    name="details"
-    rows="4"
-    [(ngModel)]="homework.details"
-    required
-  ></textarea>
-  <br />
-
+<form (ngSubmit)="createNewHomework()" class="max-w-md mx-auto pt-4">
+  <div class="relative z-0 w-full mb-5 group">
+    <input
+      [(ngModel)]="homework.title"
+      type="text"
+      name="title"
+      class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+      placeholder=" "
+      required
+    />
+    <label
+      for="title"
+      class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+      >Title</label
+    >
+  </div>
+  <div class="relative z-0 w-full mb-5 group">
+    <input
+      [(ngModel)]="homework.status"
+      type="text"
+      name="status"
+      class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+      placeholder=" "
+      required
+    />
+    <label
+      for="status"
+      class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+      >Status</label
+    >
+  </div>
+  <div class="relative z-0 w-full mb-5 group">
+    <input
+      [(ngModel)]="homework.priority"
+      type="text"
+      name="priority"
+      class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+      placeholder=" "
+      required
+    />
+    <label
+      for="priority"
+      class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+      >Priority</label
+    >
+  </div>
+  <div class="relative z-0 w-full mb-5 group">
+    <input
+      [(ngModel)]="homework.dueDate"
+      type="text"
+      name="dueDate"
+      class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+      placeholder=" "
+      required
+    />
+    <label
+      for="dueDate"
+      class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+      >Due Date</label
+    >
+  </div>
+  <div class="relative z-0 w-full mb-5 group">
+    <label
+      for="message"
+      class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+      >Details</label
+    >
+    <textarea
+      id="message"
+      [(ngModel)]="homework.details"
+      rows="4"
+      class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+      placeholder=""
+    ></textarea>
+  </div>
   <button
     type="submit"
     class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
