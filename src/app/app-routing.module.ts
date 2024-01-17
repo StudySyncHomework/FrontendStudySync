@@ -5,8 +5,9 @@ import { ListsComponent } from './lists/lists.component';
 import { DescriptionComponent } from './description/description.component';
 
 const routes: Routes = [
-   {path: '', component: ListsComponent  },
-  {path: 'new-homework', component: NewHomeworkComponent }
+  {path: '', component: ListsComponent },
+  {path: 'new-homework', component: NewHomeworkComponent },
+  {path: 'homeworks/:homeworkId', component: DescriptionComponent }
 ];
 
 @NgModule({
