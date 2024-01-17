@@ -12,6 +12,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class DescriptionComponent {
   homework: Homework = {
+    _id: '',
     title: '',
     status: '',
     priority: '',
