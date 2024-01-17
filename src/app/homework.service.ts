@@ -15,4 +15,9 @@ export class HomeworkService {
   getHomeworks(){
     return this.webReqService.get('homeworks')
   }
+
+  getHomeworkDetails(homeworkId: String){
+    return this.webReqService.get(`homeworks/${homeworkId}`)
+  }
+
 }
