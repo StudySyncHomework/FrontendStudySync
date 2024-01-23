@@ -6,16 +6,23 @@ import { HomeworkService } from 'src/app/homework.service';
 @Component({
   selector: 'app-lists',
   templateUrl: './lists.component.html',
-  styleUrls: ['./lists.component.css']
+  styleUrls: ['./lists.component.css'],
 })
 export class ListsComponent implements OnInit {
 
- homework: Homework = {
+   
+
+  isActive(homeworkId: string): boolean {
+    // Check if the current route matches the homework's route
+    return this.route.snapshot.url[1]?.path === homeworkId;
+  }
+  homework: Homework = {
+    _id : '',
     title: '',
     status: '',
     priority: '',
     dueDate: '',
-    details: ''
+    details: '',
   };
 
   homeworks: Homework[] = [];
@@ -24,21 +31,21 @@ export class ListsComponent implements OnInit {
     private homeworkService: HomeworkService,
     private router: Router,
     private route: ActivatedRoute
-  ) {this.homeworks=[]}
-
-  ngOnInit() {
-
-    this.route.params.subscribe((params: Params) => {
-      console.log(params);
-    });
-
-    this.homeworkService.getHomeworks().subscribe((data: Object) => {
-  this.homeworks = data as Homework[]; // Cast to Homework[]
-  console.log(this.homeworks);
-});
+  ) {
+    this.homeworks = [];
   }
 
- 
+  ngOnInit() {
+    this.route.params.subscribe((params: Params) => {
+      console.log(params);
+       this.homeworkService.getHomeworks().subscribe((data: Object) => {
+      this.homeworks = data as Homework[]; // Cast to Homework[]
+      console.log(this.homeworks);
+    });
+    });
+
+   
+  }
 
   showNewHomework() {
     this.router.navigate(['/new-homework']);

@@ -1,23 +1,22 @@
 <div class="app-description">
   <h3>Description</h3>
 
-  <h4>Due Date:</h4>
-  <p>04/23/2024</p>
+  <h4>
+    <p>{{ homework.title }}</p>
+  </h4>
 
-  <div class="description-container">
-    <div>
-      <h4>Status:</h4>
-      <p>Pseudocode</p>
-    </div>
-    <div>
-      <h4>Priority:</h4>
-      <p>Urgent</p>
-    </div>
+  <h4>Due Date:</h4>
+  <p>{{ homework.dueDate }}</p>
+
+  <div>
+    <h4>Status:</h4>
+    <p>{{ homework.status }}</p>
+  </div>
+  <div>
+    <h4>Priority:</h4>
+    <p>{{ homework.priority }}</p>
   </div>
 
-  <h4>Resources:</h4>
-  <p>Lecture slides</p>
-
   <h4>Details:</h4>
-  <p>Program a game</p>
+  <p>{{ homework.details }}</p>
 </div>
