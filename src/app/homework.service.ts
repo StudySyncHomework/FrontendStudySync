@@ -8,8 +8,8 @@ export class HomeworkService {
 
  constructor(private webReqService: WebRequestService) { }
 
-  createHomework(title: string, status: string, date: string, priority: string, details: string){
-    return this.webReqService.post('homeworks', {title, status, date, priority, details  });
+  createHomework(title: string, status: string,priority: string, dueDate: string,  details: string){
+    return this.webReqService.post('homeworks', {title, status, priority, dueDate,  details  });
   }
 
   getHomeworks(){
