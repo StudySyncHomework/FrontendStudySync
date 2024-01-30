@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { HomeworkService } from 'src/app/homework.service';
 import { Router } from '@angular/router';
 import { Homework } from '../homework';
+import { Status } from '../status.enum';
+import { Priority } from '../priority.enum';
 
 @Component({
   selector: 'app-new-homework',
@@ -11,8 +13,8 @@ import { Homework } from '../homework';
 export class NewHomeworkComponent {
    homework = {
     title: '',
-    status: '',
-    priority: '',
+    status: Status.Research,
+    priority: Priority.Low,
     dueDate: '',
     details: ''
   };
