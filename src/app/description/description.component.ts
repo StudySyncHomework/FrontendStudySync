@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { Homework } from '../homework';
 import { Params } from '@angular/router';
 import { HomeworkService } from '../homework.service';
+import { Status } from '../status.enum';
+import { Priority } from '../priority.enum';
+
 
 import { Router, ActivatedRoute } from '@angular/router';
 
@@ -14,8 +17,8 @@ export class DescriptionComponent {
   homework: Homework = {
     _id: '',
     title: '',
-    status: '',
-    priority: '',
+    status: Status.Research,
+    priority: Priority.Low,
     dueDate: '',
     details: '',
   };

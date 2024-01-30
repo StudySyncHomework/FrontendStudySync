@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, Params } from '@angular/router';
 import { Homework } from '../homework';
 import { HomeworkService } from 'src/app/homework.service';
+import { Status } from '../status.enum';
+import { Priority } from '../priority.enum';
 
 @Component({
   selector: 'app-lists',
@@ -19,8 +21,8 @@ export class ListsComponent implements OnInit {
   homework: Homework = {
     _id : '',
     title: '',
-    status: '',
-    priority: '',
+    status:  Status.Research,
+    priority: Priority.Low,
     dueDate: '',
     details: '',
   };
