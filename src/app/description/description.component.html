@@ -1,22 +1,15 @@
 <div class="app-description">
-  <h3>Description</h3>
+  <div class="text-2xl mb-2">{{ homework.title }}</div>
 
-  <h4>
-    <p>{{ homework.title }}</p>
-  </h4>
+  <div class="mb-2">Due Date: {{ homework.dueDate }}</div>
 
-  <h4>Due Date:</h4>
-  <p>{{ homework.dueDate }}</p>
-
-  <div>
-    <h4>Status:</h4>
-    <p>{{ homework.status }}</p>
-  </div>
-  <div>
-    <h4>Priority:</h4>
-    <p>{{ homework.priority }}</p>
+  <div class="flex gap-5 mb-2">
+    <div>Status: {{ homework.status }}</div>
+    <div>Priority: {{ homework.priority }}</div>
   </div>
 
-  <h4>Details:</h4>
-  <p>{{ homework.details }}</p>
+  <div>
+    Details:
+    <p>{{ homework.details }}</p>
+  </div>
 </div>
